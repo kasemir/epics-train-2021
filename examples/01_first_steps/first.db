@@ -1,0 +1,15 @@
+
+record(calc, "$(S):random")
+{
+  field(SCAN, "1 second")
+  field(INPA, "$(S):range")
+  field(CALC, "RNDM*A")
+}
+
+record(ai, "$(S):range")
+{
+  info(autosaveFields, "VAL")
+  field(INP,  "10")
+  field(PINI, "YES")
+}
+
