@@ -1,0 +1,3 @@
+#!/bin/sh
+
+java -cp /ics/tools/VisualDCT-2.8.2/VisualDCT.jar com.cosylab.vdct.VisualDCT /ics/tools/ether_ip/dbd/eipIoc.dbd "$@"
