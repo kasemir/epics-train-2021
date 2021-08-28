@@ -18,6 +18,14 @@ Misc. Debian additions:
     sudo apt install g++
     sudo apt install python3-is-python
 
+Set background
+
+    gsettings set org.gnome.desktop.background picture-uri file:////ics/EPICS.png
+    gsettings set org.gnome.desktop.background picture-options centered
+or
+    gsettings set org.gnome.desktop.background picture-options scaled
+
+
 EPICS
 -----
 
@@ -121,6 +129,9 @@ VDCT
 cd /ics/tools
 wget https://github.com/epics-extensions/VisualDCT/releases/download/v2.8.2/VisualDCT-2.8.2-distribution.tar.gz
 tar vzxf VisualDCT-2.8.2-distribution.tar.gz
-rm VisualDCT-2.8.1-distribution.tar.gz
+rm VisualDCT-2.8.2-distribution.tar.gz
+```
+
+
 
 
