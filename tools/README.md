@@ -14,7 +14,9 @@ Misc. Debian additions:
 
     sudo apt install htop
     sudo apt install git
-    sudo apt install build-essential
+    sudo apt install make
+    sudo apt install g++
+    sudo apt install python3-is-python
 
 EPICS
 -----
@@ -110,8 +112,8 @@ Example Displays
 ```
 rm -rf "/ics/opi/Display Builder"
 css
-# Applications, Display, Examples, Install in ~training/epics-train/examples,
-# i.e. creating examples/Display Builder
+# Applications, Display, Examples, Install in /ics/opi
+# i.e. creating /ics/opi/Display Builder
 ```
 
 VDCT
