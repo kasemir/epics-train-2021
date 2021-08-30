@@ -1,3 +1,8 @@
-O.Common-x86_64
+O.Common
 O.linux-x86_64
 envPaths
+examples/bin
+examples/db
+examples/dbd
+examples/lib
+*.swp
