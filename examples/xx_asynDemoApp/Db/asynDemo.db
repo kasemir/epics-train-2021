@@ -1,0 +1,20 @@
+
+# Read 'VALUE', automatically processed by ASYN
+record(ai, "$(P)$(R)Value")
+{
+   field(PINI, "1")
+   field(DTYP, "asynFloat64")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))VALUE")
+   field(PREC, "5")
+   field(SCAN, "I/O Intr")
+}
+
+# Note how this record will initialize to the original 'RANGE' setting!
+record(ao, "$(P)$(R)Range")
+{
+   field(PINI, "1")
+   field(DTYP, "asynFloat64")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))RANGE")
+   field(PREC, "5")
+}
+
