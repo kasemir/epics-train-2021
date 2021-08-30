@@ -132,6 +132,33 @@ tar vzxf VisualDCT-2.8.2-distribution.tar.gz
 rm VisualDCT-2.8.2-distribution.tar.gz
 ```
 
+Display Builder Web Runtime
+```
+cd /ics/tools
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.zip
+unzip apache-tomcat-9.0.52.zip
+rm apache-tomcat-9.0.52.zip
+chmod +x apache-tomcat-9.0.52/bin/*.sh
 
+wget https://apache.osuosl.org//ant/binaries/apache-ant-1.10.11-bin.zip
+unzip apache-ant-1.10.11-bin.zip
+rm apache-ant-1.10.11-bin.zip
+ln -s /ics/tools/apache-ant-1.10.11/bin/ant /ics/bin
 
+git clone https://github.com/kasemir/pvws.git
+cd pvws
+rm -rf .git
+export CATALINA_HOME=/ics/tools/apache-tomcat-9.0.52
+ant
+mv pvws.war ../apache-tomcat-9.0.52/webapps
+ant clean
+
+cd /ics/tools
+git clone https://github.com/kasemir/dbwr.git
+cd dbwr
+rm -rf .git
+ant
+mv dbwr.war ../apache-tomcat-9.0.52/webapps/
+ant clean
+```
 
