@@ -6,3 +6,5 @@ examples/db
 examples/dbd
 examples/lib
 *.swp
+opi/Display Builder
+.vscode
