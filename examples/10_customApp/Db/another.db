@@ -1,0 +1,10 @@
+record(calc, "$(user):another")
+{
+	field(SCAN,"1 second")
+	field(CALC, "(A<B)?(A+C):D")
+	field(INPA, "$(user):another")
+	field(INPB, "9")
+	field(INPC, "1")
+	field(INPD, "0")
+	field(EGU, "Counts")
+}

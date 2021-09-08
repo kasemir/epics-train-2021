@@ -1,0 +1,5 @@
+record(calc, "$(user):simple")
+{
+	field(SCAN,"1 second")
+	field(CALC, "RNDM")
+}
