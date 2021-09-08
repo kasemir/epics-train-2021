@@ -1,0 +1,27 @@
+record(calc, "$(S):ramp")
+{
+  field(CALC, "(A<B)?(A+C):0")
+  field(INPA, "$(S):ramp")
+  field(SCAN, "1 second")
+  field(INPB, "$(S):limit")
+  field(INPC, "$(S):step")
+}
+
+record(ai, "$(S):limit")
+{
+  field(INP, "10")
+  # ACC SECURITY
+  field(ASG, "EXPERT")
+}
+
+record(ai, "$(S):step")
+{
+  field(INP, "1")
+}
+
+# ACC SECURITY
+record(bo, "$(S):accessState") {
+  field(DESC, "Used by ASG to open access")
+  field(ZNAM, "Expert-Only")
+  field(ONAM, "Anybody")
+}
