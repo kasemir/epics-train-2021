@@ -2,6 +2,9 @@
 #
 # Phoebus launcher for Linux or Mac OS X
 
+# Set CWD as used by "File/Open" etc.
+cd /ics
+
 # Memory
 export JDK_JAVA_OPTIONS="-Xms500M -Xmx2G"
 
