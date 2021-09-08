@@ -1,0 +1,14 @@
+# Run like this:
+#  eipIoc -p my_plc=160.91.233.45 -m P=demo: -d plc1.db
+
+record(ai, "$(P)number1")
+{
+  field(DTYP, "EtherIP")
+  field(INP,  "@my_plc PR1[0]")
+  field(SCAN, "1 second")
+  field(EGU,  "V")
+  field(PREC, "2")
+  field(HIGH, "9")
+  field(HSV,  "MINOR")
+}
+
