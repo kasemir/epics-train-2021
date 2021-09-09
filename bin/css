@@ -26,4 +26,9 @@ JDK_JAVA_OPTIONS+=" -Dprism.verbose=false -Dprism.forceGPU=true"
 # JDK_JAVA_OPTIONS+=" -Dprism.order=sw"
 
 
-/ics/tools/phoebus/phoebus-*/phoebus.sh -settings /ics/tools/phoebus/settings.ini "$@" >/tmp/phoebus.log 2>&1
+if [ "x$1" = "x-help" ]
+then
+    /ics/tools/phoebus/phoebus-*/phoebus.sh "$@"
+else
+    /ics/tools/phoebus/phoebus-*/phoebus.sh -settings /ics/tools/phoebus/settings.ini "$@" >/tmp/phoebus.log 2>&1
+fi
