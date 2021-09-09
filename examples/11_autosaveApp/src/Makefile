@@ -15,9 +15,11 @@ DBD += autosave.dbd
 # autosave.dbd will be made up from these files:
 autosave_DBD += base.dbd
 
+################################
 ### Include AUTOSAVE support ###
 autosave_DBD += asSupport.dbd
 autosave_LIBS += autosave
+################################
 ################################
 
 # autosave_registerRecordDeviceDriver.cpp derives from autosave.dbd
