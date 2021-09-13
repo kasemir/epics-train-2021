@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Strings</name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Strings</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Plain String:</text>
+    <y>50</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <class>COMMENT</class>
+    <text>Cannot enter more than 40 characters!</text>
+    <x>90</x>
+    <y>80</y>
+    <width>350</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>string</pv_name>
+    <x>90</x>
+    <y>50</y>
+    <width>360</width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>chars</pv_name>
+    <x>90</x>
+    <y>110</y>
+    <width>360</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Waveform:</text>
+    <y>110</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <class>COMMENT</class>
+    <text>Client needs to know if it's BYTE[] or String!</text>
+    <x>90</x>
+    <y>170</y>
+    <width>350</width>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>chars</pv_name>
+    <x>92</x>
+    <y>140</y>
+    <width>360</width>
+    <format>6</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_3</name>
+    <pv_name>long_string</pv_name>
+    <x>90</x>
+    <y>200</y>
+    <width>360</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Long String:</text>
+    <y>200</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <class>COMMENT</class>
+    <text>By default, "lsi" acts like String, but when accessed as "...VAL$", it provides a CHAR[]/BYTE[] to support long strings, and client again needs to know that the BYTE[] should be treated as a string.</text>
+    <x>90</x>
+    <y>260</y>
+    <width>350</width>
+    <height>80</height>
+    <font use_class="true">
+      <font name="Comment" family="Liberation Sans" style="ITALIC" size="14.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+    <wrap_words use_class="true">true</wrap_words>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_4</name>
+    <pv_name>long_string.VAL$</pv_name>
+    <x>92</x>
+    <y>230</y>
+    <width>360</width>
+    <format>6</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_5</name>
+    <pv_name>lsi_init</pv_name>
+    <x>90</x>
+    <y>370</y>
+    <width>440</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Long String:
+(initialized)</text>
+    <y>370</y>
+    <height>40</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_6</name>
+    <pv_name>lsi_init.VAL$</pv_name>
+    <x>92</x>
+    <y>400</y>
+    <width>438</width>
+    <format>6</format>
+  </widget>
+</display>

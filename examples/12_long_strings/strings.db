@@ -1,0 +1,53 @@
+# Run like this:
+#     softIoc -d strings.db
+
+# EPICS Strings: Up to 40 characters
+record(stringin, "string")
+{
+}
+
+# Old solution: Character waveform
+record(waveform, "chars")
+{
+    field(FTVL, "CHAR")
+    field(NELM, "200")
+}
+
+# Comparably new: Long String
+record(lsi, "long_string")
+{
+    field(SIZV, "200")
+}
+
+
+# How to initialize a long string?
+# Run "dbpr lsi_initfail 10"
+# and check INP!
+record(lsi, "lsi_initfail")
+{
+    field(SIZV, "200")
+    field(INP,  "Hello!")
+    field(PINI, "YES")
+}
+
+
+
+# Run "dbpr lsi_initfail 10"
+# and check INP!
+record(lsi, "lsi_init")
+{
+    field(SIZV, "200")
+    field(INP, {const:"Hello, this is a string, and it can in fact have more than 40 characters"})
+    field(PINI, "YES")
+}
+
+# Not
+record(waveform, "array")
+{
+    field(FTVL, "CHAR")
+    field(NELM, "200")
+    field(INP, {const:[65, 66, 67, 68, 69]})
+    field(PINI, "YES")
+}
+
+
