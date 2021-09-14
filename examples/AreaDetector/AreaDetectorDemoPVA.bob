@@ -8,7 +8,7 @@
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <class>TITLE</class>
-    <text>Area Detector Demo</text>
+    <text>Area Detector Demo (PVA)</text>
     <x use_class="true">0</x>
     <y use_class="true">0</y>
     <width>550</width>
@@ -51,7 +51,7 @@
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_1</name>
-    <text>1) cd /home/training/epics-train/examples/AreaDetector
+    <text>1) cd /ics/examples/AreaDetector
    ./start_sim_ioc.sh
 2) Open Detector page
 3) Press Connect.. "Start"

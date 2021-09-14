@@ -125,6 +125,11 @@ mv ADSimDetector-R2-10/* areaDetector/ADSimDetector/
 rm -rf ADSimDetector-R2-10/
 rm R2-10.zip 
 
+wget https://github.com/areaDetector/pvaDriver/archive/refs/tags/R1-5.zip
+unzip R1-5.zip
+rm R1-5.zip
+mv pvaDriver-R1-5/* areaDetector/pvaDriver/
+rm -rf pvaDriver-R1-5
 
 cd areaDetector
 # See https://areadetector.github.io/master/install_guide.html,
