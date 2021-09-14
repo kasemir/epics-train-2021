@@ -11,6 +11,7 @@ VisualDCT-2.8.2
 pvws
 dbwr
 phoebus/phoebus-4.6.6
+phoebus/product*
 RELEASE.local
 apache-ant-1.10.11
 apache-tomcat-9.0.52
