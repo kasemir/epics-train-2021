@@ -19,7 +19,6 @@ record(lsi, "long_string")
     field(SIZV, "200")
 }
 
-
 # How to initialize a long string?
 # Run "dbpr lsi_initfail 10"
 # and check INP!
@@ -30,8 +29,6 @@ record(lsi, "lsi_initfail")
     field(PINI, "YES")
 }
 
-
-
 # Run "dbpr lsi_initfail 10"
 # and check INP!
 record(lsi, "lsi_init")
@@ -41,7 +38,9 @@ record(lsi, "lsi_init")
     field(PINI, "YES")
 }
 
-# Not
+# Example for initializing an array.
+# This one happens to be readable as long string,
+# but would work the same for e.g. FTVL=DOUBLE
 record(waveform, "array")
 {
     field(FTVL, "CHAR")
