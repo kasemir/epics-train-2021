@@ -97,6 +97,39 @@ cd busy-1-6-1
 cp ../ether_ip/configure/RELEASE configure
 make
 echo "BUSY=`pwd`" >> ../RELEASE.local
+
+
+# Area Detector
+sudo apt install zlib1g-dev
+cd /ics/tools
+wget https://github.com/areaDetector/areaDetector/archive/refs/tags/R3-11.zip
+unzip R3-11.zip 
+rm R3-11.zip 
+mv areaDetector-R3-11 areaDetector
+
+wget https://github.com/areaDetector/ADCore/archive/refs/tags/R3-11.zip
+unzip R3-11.zip 
+mv ADCore-R3-11/* areaDetector/ADCore
+rm R3-11.zip 
+rm -rf ADCore-R3-11
+
+wget https://github.com/areaDetector/ADSupport/archive/refs/tags/R1-10.zip
+unzip R1-10.zip
+mv ADSupport-R1-10/* areaDetector/ADSupport/
+rm -rf ADSupport-R1-10
+rm R1-10.zip 
+
+wget https://github.com/areaDetector/ADSimDetector/archive/R2-10.zip
+unzip R2-10.zip 
+mv ADSimDetector-R2-10/* areaDetector/ADSimDetector/
+rm -rf ADSimDetector-R2-10/
+rm R2-10.zip 
+
+
+cd areaDetector
+# See https://areadetector.github.io/master/install_guide.html,
+# edit many configure/* files
+make
 ```
 
 CS-Studio
