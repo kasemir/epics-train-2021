@@ -110,10 +110,10 @@ cd /ics/tools
 mkdir phoebus
 cd phoebus
 
-wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/phoebus-linux.zip
-unzip phoebus-linux.zip
-rm phoebus-linux.zip
-rm phoebus-*/lib/app-update-*.jar 
+wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/product-sns-linux.zip
+unzip product-sns-linux.zip
+rm product-sns-linux.zip
+rm product-*/lib/app-update-*.jar 
 ```
 
 Example Displays

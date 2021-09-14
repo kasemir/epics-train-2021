@@ -28,7 +28,7 @@ JDK_JAVA_OPTIONS+=" -Dprism.verbose=false -Dprism.forceGPU=true"
 
 if [ "x$1" = "x-help" ]
 then
-    /ics/tools/phoebus/phoebus-*/phoebus.sh "$@"
+    /ics/tools/phoebus/*/phoebus.sh "$@"
 else
-    /ics/tools/phoebus/phoebus-*/phoebus.sh -settings /ics/tools/phoebus/settings.ini "$@" >/tmp/phoebus.log 2>&1
+    /ics/tools/phoebus/*/phoebus.sh -settings /ics/tools/phoebus/settings.ini "$@" >/tmp/phoebus.log 2>&1
 fi
