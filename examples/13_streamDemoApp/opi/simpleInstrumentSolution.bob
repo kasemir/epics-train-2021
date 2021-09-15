@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Stream Demo</name>
+  <width>610</width>
+  <height>200</height>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Simple Instrument</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>200</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Current:</text>
+    <y>61</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>SI:Amp</pv_name>
+    <x>100</x>
+    <y>61</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Voltage:</text>
+    <y>31</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>SI:Volt</pv_name>
+    <x>100</x>
+    <y>31</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>State:</text>
+    <y>120</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>SI:OnOff</pv_name>
+    <x>100</x>
+    <y>120</y>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>SI:OnOffCmd</pv_name>
+    <x>220</x>
+    <y>110</y>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>SI:OnOff</pv_name>
+    <x>70</x>
+    <y>120</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>ID:</text>
+    <y>150</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>SI:IDN</pv_name>
+    <x>100</x>
+    <y>150</y>
+    <width>510</width>
+    <format>6</format>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Load:</text>
+    <y>180</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>SI:Load1</pv_name>
+    <x>100</x>
+    <y>180</y>
+    <width>60</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>SI:Load2</pv_name>
+    <x>170</x>
+    <y>180</y>
+    <width>60</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_5</name>
+    <pv_name>SI:Load3</pv_name>
+    <x>240</x>
+    <y>180</y>
+    <width>60</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Power:</text>
+    <y>90</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>SI:Pwr</pv_name>
+    <x>100</x>
+    <y>90</y>
+  </widget>
+</display>

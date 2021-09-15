@@ -1,0 +1,77 @@
+# Database for simpleInstrument.py
+
+record(ao, "SI:Volt")
+{
+  field(DTYP, "stream")
+  field(OUT,  "@si.proto setVolt SI")
+  field(EGU,  "V")
+  field(PREC, "2")
+}
+
+record(ai, "SI:Amp")
+{
+  field(DTYP, "stream")
+  field(INP,  "@si.proto getCurr SI")
+  field(SCAN, "5 second")
+  field(EGU,  "A")
+  field(PREC, "2")
+}
+
+record(calc, "SI:Pwr")
+{
+  field(INPA, "SI:Volt CP MS")
+  field(INPB, "SI:Amp CP MS")
+  field(CALC, "A*B")
+  field(EGU,  "W")
+  field(PREC, "2")
+}
+
+record(bi, "SI:OnOff")
+{
+  field(DTYP, "stream")
+  field(INP,  "@si.proto getOnOff SI")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+  field(SCAN, "5 second")
+}
+
+record(bo, "SI:OnOffCmd")
+{
+  field(DTYP, "stream")
+  field(OUT,  "@si.proto setOnOff SI")
+  field(ZNAM, "Off")
+  field(ONAM, "On")
+}
+
+record(waveform, "SI:IDN")
+{
+  field(DTYP, "stream")
+  field(INP,  "@si.proto getIDN SI")
+  field(FTVL, "CHAR")
+  field(NELM, "100")
+  field(SCAN, "5 second")
+}
+
+record (ai, "SI:Load1")
+{
+  field (DTYP, "stream")
+  field (INP,  "@si.proto read_L1 SI")
+  field (SCAN, "1 second")
+  field (PREC, "2")
+}
+
+record (ai, "SI:Load2")
+{
+  field (DTYP, "stream")
+  field (INP,  "@si.proto read_L2 SI")
+  field (SCAN, "I/O Intr")
+  field (PREC, "2")
+}
+
+record (ai, "SI:Load3")
+{
+  field (DTYP, "stream")
+  field (INP,  "@si.proto read_L3 SI")
+  field (SCAN, "I/O Intr")
+  field (PREC, "2")
+}
