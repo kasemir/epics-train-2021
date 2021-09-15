@@ -19,5 +19,5 @@ record(ao, "current")
   field (DRVL, "0")
   field (DRVH, "60")
   field (LOPR, "0")
-  field (HOPR, "60“)
+  field (HOPR, "60")
 }
