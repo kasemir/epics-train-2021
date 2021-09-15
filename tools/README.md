@@ -140,6 +140,19 @@ cd areaDetector
 # See https://areadetector.github.io/master/install_guide.html,
 # edit many configure/* files
 make
+
+
+# PyEpics CA client
+sudo apt install python3-pip
+cd /ics/tools
+wget https://github.com/pyepics/pyepics/archive/refs/tags/3.5.0.zip
+unzip 3.5.0.zip
+rm 3.5.0.zip
+cd pyepics-3.5.0
+python setup.py build
+sudo python setup.py install
+cd ..
+sudo rm -rf pyepics-3.5.0
 ```
 
 CS-Studio
