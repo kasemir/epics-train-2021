@@ -25,6 +25,11 @@ Set background
 or
     gsettings set org.gnome.desktop.background picture-options scaled
 
+Disable update prompts:
+Applications, Settings, Notifications, Software Updater:
+Turn all details off.
+
+Perform manual update via Appllications, Software Update.
 
 EPICS
 -----
