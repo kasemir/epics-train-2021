@@ -42,7 +42,7 @@ class DummyDevice(socketserver.StreamRequestHandler):
             if verbose:
                 print ("> " + line)
             if (line == '*IDN?'):
-                reply = '*IDN US-PAS Instrument, Yoyodyne Incorporated -- An ACME Industries subsidiary, S/N:1313'
+                reply = '*IDN US-PAS Instrument, Yoyodyne Inc. -- An ACME Industries subsidiary, S/N:1313'
             elif (line == 'ON?'):
                 reply = 'ON ' + ('1' if on else '0')
             elif (line == 'VOLTS?'):
