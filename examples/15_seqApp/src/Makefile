@@ -24,11 +24,16 @@ seq_SRCS_DEFAULT += seqMain.cpp
 seq_SRCS_vxWorks += -nil-
 
 # Build sncExample into seqSupport
-sncExample_SNCFLAGS += +r
+SNCFLAGS += +r
 seq_DBD += sncExample.dbd
+
 # A .stt sequence program is *not* pre-processed:
-seq_SRCS += sncProgram.st
 # seq_SRCS += sncExample.stt
+seq_SRCS += sncProgram.st
+
+seq_DBD += tank.dbd
+seq_SRCS += tank.st
+
 seq_LIBS += seq pv
 
 # Link QSRV (pvAccess Server) if available
