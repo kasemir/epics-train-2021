@@ -1,0 +1,2 @@
+
+device(ai, CONSTANT, devAiRnd, "random")

@@ -1,0 +1,17 @@
+
+# Example of AI record that uses the devAiRnd
+record(ai, "$(user):aiRandom")
+{
+    field(DESC, "Random Test")
+    field(DTYP, "random")
+    field(INP,  "10.0")
+    field(SCAN, "1 second")
+}
+
+record(ai, "$(user):aiRandom2")
+{
+    field(DESC, "Random Test")
+    field(DTYP, "random")
+    field(INP,  "100.0")
+    field(SCAN, "1 second")
+}
