@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>Seq Display</name>
+  <width>740</width>
+  <height>486</height>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle_3</name>
     <x>509</x>
@@ -294,31 +296,6 @@
         <pv_name>demo:outFlowPump</pv_name>
       </rule>
     </rules>
-  </widget>
-  <widget type="multi_state_led" version="2.0.0">
-    <name>LED (Multi State)</name>
-    <x>900</x>
-    <y>290</y>
-    <width>1</width>
-    <height>1</height>
-    <states>
-      <state>
-        <value>0</value>
-        <label>State 1</label>
-        <color>
-          <color name="Off" red="60" green="100" blue="60">
-          </color>
-        </color>
-      </state>
-      <state>
-        <value>1</value>
-        <label>State 2</label>
-        <color>
-          <color name="On" red="0" green="255" blue="0">
-          </color>
-        </color>
-      </state>
-    </states>
   </widget>
   <widget type="polyline" version="2.0.0">
     <name>Polyline_2</name>
