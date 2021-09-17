@@ -218,3 +218,32 @@ mv dbwr.war ../apache-tomcat-9.0.52/webapps/
 ant clean
 ```
 
+
+MySQL
+```
+sudo apt install mariadb-server
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+# Set root password, which is initially empty, to '$root'
+# Remove test database, remote root access:
+sudo /usr/bin/mysql_secure_installation
+sudo systemctl enable mariadb
+```
+
+MariaDB will by default not allow login as `mysql -u root -p'$root'`.
+Access the RDB via `sudo mysql`,
+install archive user and tables as described in
+https://github.com/ControlSystemStudio/phoebus/blob/master/services/archive-engine/doc/index.rst
+
+It will then be accessible via `mysql -u archive -p'$archive' archive`.
+
+
+Archive engine
+```
+cd /ics/tools/phoebus
+wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/archive-engine.zip
+unzip archive-engine.zip
+rm archive-engine.zip
+```
+
+

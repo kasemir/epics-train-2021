@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<engineconfig>
+  <group>
+    <name>Demo</name>
+    <channel>
+      <name>training:setpoint</name>
+      <monitor/>
+      <period>0.1</period>
+    </channel>
+    <channel>
+      <name>training:tank</name>
+      <monitor/>
+      <period>0.1</period>
+      <delta>1.0</delta>
+    </channel>
+    <channel>
+      <name>training:heat_V</name>
+      <monitor/>
+      <period>0.1</period>
+      <delta>1.0</delta>
+    </channel>
+  </group>
+</engineconfig>

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /ics/tools/phoebus/archive-engine-4.6.6
+./archive-engine.sh "$@"
