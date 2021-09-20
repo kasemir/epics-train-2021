@@ -66,3 +66,18 @@ record(bo, "$(P)write_bit10")
   field(ONAM, "On")
 }
 
+record(mbbo, "$(P)write_bits23")
+{
+  field(DTYP, "EtherIP")
+  field(OUT,  "@my_plc EDINT1[2] S 1")
+  field(NOBT, "2")
+  field(ZRVL, "0")
+  field(ONVL, "1")
+  field(TWVL, "2")
+  field(THVL, "3")
+  field(ZRST, "Zero")
+  field(ONST, "One")
+  field(TWST, "Two")
+  field(THST, "Three")
+}
+

@@ -95,17 +95,14 @@
       <item>Item 2</item>
     </items>
   </widget>
-  <widget type="radio" version="2.0.0">
+  <widget type="checkbox" version="2.0.0">
     <name>Radio Button_1</name>
     <pv_name>demo:write_bit1</pv_name>
+    <label></label>
     <x>90</x>
     <y>320</y>
-    <width>200</width>
-    <height>30</height>
-    <items>
-      <item>Item 1</item>
-      <item>Item 2</item>
-    </items>
+    <width>20</width>
+    <show_confirm_dialog>false</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_5</name>
@@ -188,22 +185,37 @@
     <y>320</y>
     <width>70</width>
   </widget>
-  <widget type="radio" version="2.0.0">
+  <widget type="bool_button" version="2.0.0">
     <name>Radio Button_2</name>
     <pv_name>demo:write_bit10</pv_name>
     <x>90</x>
-    <y>360</y>
-    <width>200</width>
-    <height>30</height>
-    <items>
-      <item>Item 1</item>
-      <item>Item 2</item>
-    </items>
+    <y>400</y>
+    <width>130</width>
+    <height>20</height>
+    <show_confirm_dialog>false</show_confirm_dialog>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label_9</name>
     <text>Bit 10:</text>
+    <y>400</y>
+    <width>70</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_10</name>
+    <text>Bits 2 &amp; 3:</text>
     <y>360</y>
     <width>70</width>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Radio Button_3</name>
+    <pv_name>demo:write_bits23</pv_name>
+    <x>90</x>
+    <y>360</y>
+    <width>300</width>
+    <height>20</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
   </widget>
 </display>
