@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>My First PLC Display</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Some Number:</text>
+    <y>40</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>demo:number1</pv_name>
+    <x>100</x>
+    <y>40</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>demo:number2</pv_name>
+    <x>100</x>
+    <y>70</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Other Number:</text>
+    <y>70</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>demo:number3</pv_name>
+    <x>100</x>
+    <y>100</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>.. Number:</text>
+    <y>100</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>demo:write2</pv_name>
+    <x>210</x>
+    <y>70</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Decimal:</text>
+    <y>190</y>
+    <width>70</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>demo:int0</pv_name>
+    <x>80</x>
+    <y>190</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <x>110</x>
+    <y>220</y>
+    <width>10</width>
+    <height>1</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>demo:write_int0</pv_name>
+    <x>190</x>
+    <y>190</y>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>Radio Button</name>
+    <pv_name>demo:write_bit0</pv_name>
+    <x>90</x>
+    <y>280</y>
+    <width>200</width>
+    <height>30</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>Radio Button_1</name>
+    <pv_name>demo:write_bit1</pv_name>
+    <x>90</x>
+    <y>320</y>
+    <width>200</width>
+    <height>30</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Hex:</text>
+    <y>220</y>
+    <width>70</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Bit 0:</text>
+    <y>280</y>
+    <width>70</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_7</name>
+    <text>Bits:</text>
+    <y>250</y>
+    <width>70</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_6</name>
+    <pv_name>demo:int0</pv_name>
+    <x>80</x>
+    <y>220</y>
+    <format>4</format>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>demo:write_int0</pv_name>
+    <x>190</x>
+    <y>220</y>
+    <format>4</format>
+  </widget>
+  <widget type="byte_monitor" version="2.0.0">
+    <name>Byte Monitor</name>
+    <pv_name>demo:int0</pv_name>
+    <x>80</x>
+    <y>250</y>
+    <width>600</width>
+    <numBits>32</numBits>
+    <square>true</square>
+    <labels>
+      <text>0</text>
+      <text>1</text>
+      <text>2</text>
+      <text>3</text>
+      <text>4</text>
+      <text>5</text>
+      <text>6</text>
+      <text>7</text>
+      <text>8</text>
+      <text>9</text>
+      <text>10</text>
+      <text>11</text>
+      <text>12</text>
+      <text>13</text>
+      <text>14</text>
+      <text>15</text>
+      <text>16</text>
+      <text>17</text>
+      <text>18</text>
+      <text>19</text>
+      <text>20</text>
+      <text>21</text>
+      <text>22</text>
+      <text>23</text>
+      <text>24</text>
+      <text>25</text>
+      <text>26</text>
+      <text>27</text>
+      <text>28</text>
+      <text>29</text>
+      <text>30</text>
+      <text>31</text>
+    </labels>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_8</name>
+    <text>Bit 1:</text>
+    <y>320</y>
+    <width>70</width>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>Radio Button_2</name>
+    <pv_name>demo:write_bit10</pv_name>
+    <x>90</x>
+    <y>360</y>
+    <width>200</width>
+    <height>30</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_9</name>
+    <text>Bit 10:</text>
+    <y>360</y>
+    <width>70</width>
+  </widget>
+</display>

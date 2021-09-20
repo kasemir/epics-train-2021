@@ -1,0 +1,30 @@
+# Run like this:
+#  eipIoc -p my_plc=160.91.233.45 -m P=demo: -d plc2.db
+
+record(ai, "$(P)number1")
+{
+  field(DTYP, "EtherIP")
+  field(INP,  "@my_plc PR1[0] S .1")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)number2")
+{
+  field(DTYP, "EtherIP")
+  field(INP,  "@my_plc PR1[1] S .1")
+  field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(P)number3")
+{
+  field(DTYP, "EtherIP")
+  field(INP,  "@my_plc PR1[10] S 2")
+  field(SCAN, "I/O Intr")
+}
+
+record(ao, "$(P)write2")
+{
+  field(DTYP, "EtherIP")
+  field(OUT,  "@my_plc PR1[1] S 1")
+}
+
