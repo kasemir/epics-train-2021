@@ -247,3 +247,36 @@ rm archive-engine.zip
 ```
 
 
+Alarm System
+Follow https://github.com/ControlSystemStudio/phoebus/blob/master/app/alarm
+```
+cd /ics/tools
+wget http://mirrors.gigenet.com/apache/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+tar -vzxf kafka_2.13-3.0.0.tgz
+rm kafka_2.13-3.0.0.tgz
+ln -s kafka_2.13-3.0.0 kafka
+
+sudo mkdir /var/kafka
+sudo chown training /var/kafka
+# Update to use dirs under /var/kafka
+vi kafka/config/zookeeper.properties
+vi kafka/config/server.properties
+
+sudo cp zookeeper.service /etc/systemd/system
+sudo systemctl start zookeeper
+sudo systemctl status zookeeper
+netstat -an | fgrep 2181
+
+sudo cp kafka.service /etc/systemd/system
+sudo systemctl start kafka
+sudo systemctl status kafka
+netstat -an | fgrep 9092
+
+sudo systemctl enable zookeeper.service
+sudo systemctl enable kafka.service
+
+sh create_alarm_topics.sh Accelerator
+wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/alarm-server.zip
+unzip alarm-server.zip
+rm alarm-server.zip
+```

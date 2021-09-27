@@ -17,3 +17,6 @@ apache-ant-1.10.11
 apache-tomcat-9.0.52
 areaDetector
 archive-engine*
+alarm-server-*
+kafka
+kafka_2.13-3.0.0
