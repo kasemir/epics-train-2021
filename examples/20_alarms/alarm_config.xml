@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config name="Accelerator">
+  <component name="AlarmDemo">
+    <display>
+      <title>Display</title>
+      <details>/ics/examples/20_alarms/alarms.bob</details>
+    </display>
+    <pv name="analog">
+      <description>analog</description>
+      <enabled>true</enabled>
+      <latching>true</latching>
+      <annunciating>true</annunciating>
+    </pv>
+  </component>
+  <component name="Fishtank">
+    <guidance>
+      <title>Fish Care</title>
+      <details>Feed the fish</details>
+    </guidance>
+    <display>
+      <title>Display</title>
+      <details>/ics/opi/Display Builder/fishtank/heater.bob</details>
+    </display>
+    <pv name="training:tank">
+      <description>training:tank</description>
+      <enabled>true</enabled>
+      <latching>true</latching>
+      <annunciating>true</annunciating>
+    </pv>
+  </component>
+  <component name="Top">
+    <pv name="sim://sine">
+      <description>sim://sine</description>
+      <enabled>true</enabled>
+      <latching>true</latching>
+      <annunciating>true</annunciating>
+    </pv>
+  </component>
+</config>

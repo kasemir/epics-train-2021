@@ -1,0 +1,54 @@
+# Run with
+#  softIoc -d alarms.db
+
+record(ai, "analog")
+{
+    # Alarm limits
+    field(HIHI, "100")
+    field(HHSV, "MAJOR")
+
+    field(HIGH, "80")
+    field(HSV,  "MINOR")
+
+    field(LOW,  "20")
+    field(LSV,  "MINOR")
+
+    field(LOLO, "0")
+    field(LLSV, "MAJOR")
+
+    # Alarm hysteresis
+    field(HYST, "5")
+
+    # Display niceties
+    field(HOPR, "110")
+    field(LOPR, "-10")
+    field(EGU,  "Fathoms")
+    field(PREC, "1")
+}
+
+
+record(bi, "binary")
+{
+    # Alarm states
+    field(ZSV,  "MINOR")
+    field(OSV,  "MAJOR")
+
+    # Display niceties
+    field(ZNAM, "Marginal")
+    field(ONAM, "Hopeless")
+}
+
+
+record(mbbi, "states")
+{
+    # Alarm states
+    field(TWSV, "MAJOR")
+
+    # Display niceties
+    field(ZRST, "Off")
+    field(ONST, "On")
+    field(TWST, "Overheated")
+}
+
+
+
