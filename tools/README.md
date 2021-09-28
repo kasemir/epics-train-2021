@@ -153,6 +153,39 @@ python setup.py build
 sudo python setup.py install
 cd ..
 sudo rm -rf pyepics-3.5.0
+
+
+# PCAS
+# Build inside EPICS base as one of the modules
+# because that's where PCASPY expects it
+cd $EPICS_BASE/modules
+wget https://github.com/epics-modules/pcas/archive/v4.13.2.zip
+unzip v4.13.2.zip
+rm v4.13.2.zip
+mv pcas-4.13.2 pcas
+
+cat <<END >Makefile.local
+SUBMODULES += pcas
+pcas_DEPEND_DIRS = libcom
+END
+
+echo EPICS_BASE=$EPICS_BASE >pcas/configure/RELEASE.local
+make
+
+
+# PCASPY
+sudo apt install swig
+cd /ics/tools/
+wget https://github.com/paulscherrerinstitute/pcaspy/archive/0.7.3.zip
+unzip 0.7.3.zip
+rm 0.7.3.zip
+cd pcaspy-0.7.3
+python setup.py build
+sudo EPICS_BASE=$EPICS_BASE EPICS_HOST_ARCH=$EPICS_HOST_ARCH python setup.py install
+cd ..
+rm -rf pcaspy-0.7.3
+
+
 ```
 
 CS-Studio
