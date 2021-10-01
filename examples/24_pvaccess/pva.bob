@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Main</name>
+  <width>1010</width>
+  <height>570</height>
+  <grid_color>
+    <color red="127" green="127" blue="127">
+    </color>
+  </grid_color>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>CA vs PVA</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>280</width>
+    <height>30</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_29</name>
+    <actions>
+      <action type="open_display">
+        <file>/ics/examples/02_fishtank/heater.bob</file>
+        <macros>
+          <USER>training</USER>
+        </macros>
+        <target>replace</target>
+        <description>Fishtank</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>30</y>
+    <width>120</width>
+    <height>26</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_30</name>
+    <actions>
+      <action type="open_display">
+        <file>/ics/examples/02_fishtank/heater.bob</file>
+        <macros>
+          <USER>ca://training</USER>
+        </macros>
+        <target>replace</target>
+        <description>Fishtank (ca://...)</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>70</y>
+    <width>120</width>
+    <height>26</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_31</name>
+    <actions>
+      <action type="open_display">
+        <file>/ics/examples/02_fishtank/heater.bob</file>
+        <macros>
+          <USER>pva://training</USER>
+        </macros>
+        <target>replace</target>
+        <description>Fishtank (pva://...)</description>
+      </action>
+    </actions>
+    <x>10</x>
+    <y>110</y>
+    <width>120</width>
+    <height>26</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+</display>

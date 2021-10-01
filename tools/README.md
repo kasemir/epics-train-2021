@@ -184,8 +184,26 @@ python setup.py build
 sudo EPICS_BASE=$EPICS_BASE EPICS_HOST_ARCH=$EPICS_HOST_ARCH python setup.py install
 cd ..
 rm -rf pcaspy-0.7.3
+```
 
+PVXS, P4P/Gateway
+-----------------
 
+```
+sudo apt install libevent-dev
+cd /ics/tools/
+git clone https://github.com/mdavidsaver/pvxs.git
+cd pvxs
+make
+echo "PVXS=`pwd`" >> ../RELEASE.local
+```
+
+```
+cd /ics/tools/
+git clone https://github.com/mdavidsaver/p4p.git
+cd p4p
+python3 -m pip install -r requirements-latest.txt
+make
 ```
 
 CS-Studio
