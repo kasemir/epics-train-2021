@@ -206,6 +206,23 @@ python3 -m pip install -r requirements-latest.txt
 make
 ```
 
+V4 Demos
+--------
+
+```
+cd /ics/tools/
+git clone https://github.com/kasemir/EPICSV4Sandbox.git
+cd EPICSV4Sandbox/neutronsDemoServer
+# Edit configure/RELEASE and src/Makefile, look for pvxs, PVXS
+cd src
+make
+
+cd /ics/tools/EPICSV4Sandbox/ntndarrayServer/src
+# Patch: Remove ntndarrayServer.cpp line 62 call to PVRecord::destroy(),
+#        Remove ntndarrayServerMain.cpp #include <pv/traceRecord.h>
+make
+```
+
 CS-Studio
 ---------
 

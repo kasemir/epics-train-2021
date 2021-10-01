@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ $# -gt 0 ]
+then
+    /ics/tools/EPICSV4Sandbox/neutronsDemoServer/bin/linux-x86_64/neutronServerMain "$@"
+else
+    /ics/tools/EPICSV4Sandbox/neutronsDemoServer/bin/linux-x86_64/neutronServerMain -d 0.5 -r
+fi
