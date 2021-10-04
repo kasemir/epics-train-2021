@@ -15,8 +15,8 @@ def check(value):
     y = value['y']['value']
     print("%+.4f %+.4f -> %.8f" % (x, y, sqrt(x*x + y*y)))
 
-pva.monitor('training:circle', check)
-sleep(1000)
+with pva.monitor('training:circle', check):
+    sleep(1000)
 
 
 
