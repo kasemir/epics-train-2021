@@ -9,16 +9,23 @@ def show_setpoint(V):
 def show_temperature(V):
     print("Tank temperature:", V)
 
-pva.monitor('training:setpoint', show_setpoint)
-pva.monitor('training:tank', show_temperature)
-sleep(10)
-print("Changing setpoint...")
-pva.put('training:setpoint', 40)
+# pva.monitor('name_of_pv') returns a subscripion.
+# We need to hold on to it, because otherwise the garbage collector
+# will close it an any time.
+# There are two ways to handle subscriptions
+# 1) Hold on to the subscription in a variable and later 'close()' it.
+subcription1 = pva.monitor('training:setpoint', show_setpoint)
 
-# Need to re-start monitors after 'put'?
-pva.monitor('training:setpoint', show_setpoint)
-pva.monitor('training:tank', show_temperature)
-sleep(10)
-print("Changing setpoint...")
-pva.put('training:setpoint', 30)
+# 2) Use in a 'with pv.monitor(...), pva.monitor(...):'
+#    block which will internally keep the subscription
+#    and close when leaving the scope
+with pva.monitor('training:tank', show_temperature):
+    sleep(10)
+    print("Changing setpoint...")
+    pva.put('training:setpoint', 40)
 
+    sleep(10)
+    print("Changing setpoint...")
+    pva.put('training:setpoint', 30)
+
+subcription1.close()
