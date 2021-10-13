@@ -348,3 +348,15 @@ wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/alarm-server.zip
 unzip alarm-server.zip
 rm alarm-server.zip
 ```
+
+Cleanup for VM Snapshot
+-----------------------
+
+```
+sudo dd if=/dev/zero of=emptyfile bs=1M
+sudo rm emptyfile
+```
+
+Clear `.bash_history`
+
+Maybe clear .bash_history
