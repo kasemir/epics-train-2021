@@ -6,7 +6,7 @@
 dbLoadDatabase("../../dbd/streamDemo.dbd",0,0)
 streamDemo_registerRecordDeviceDriver(pdbbase)
 
-epicsEnvSet ("STREAM_PROTOCOL_PATH", "/ics/examples/13_streamDemoApp/Db")
+epicsEnvSet ("STREAM_PROTOCOL_PATH", "/ics/examples/08_streamDemoApp/Db")
 
 drvAsynIPPortConfigure ("SI", "127.0.0.1:24742")
 

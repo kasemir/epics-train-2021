@@ -15,12 +15,6 @@ DBD += streamDemo.dbd
 # streamDemo.dbd will be made up from these files:
 streamDemo_DBD += base.dbd
 
-# Include dbd files from all support applications:
-#streamDemo_DBD += xxx.dbd
-
-# Add all the support libraries needed by this IOC
-#streamDemo_LIBS += xxx
-
 # streamDemo_registerRecordDeviceDriver.cpp derives from streamDemo.dbd
 streamDemo_SRCS += streamDemo_registerRecordDeviceDriver.cpp
 
@@ -33,7 +27,6 @@ streamDemo_SRCS_vxWorks += -nil-
 
 # Finally link to the EPICS Base libraries
 streamDemo_LIBS += $(EPICS_BASE_IOC_LIBS)
-
 
 
 ##### ADDED FOR STREAM DEVICE ############
