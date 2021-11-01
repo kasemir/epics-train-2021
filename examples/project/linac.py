@@ -18,8 +18,9 @@ def clip(v):
     if (v < -10.0): return -10
     return v
 
-
+verbose = "--verbose" in sys.argv
 status = { }
+
 class DummyDevice(socketserver.StreamRequestHandler):
     def handle(self):
         global status
@@ -34,6 +35,8 @@ class DummyDevice(socketserver.StreamRequestHandler):
         BeamCurrentFraction = 0.8
         ButtonFullScale = 8192
         client = self.client_address[0]
+        if verbose:
+            print("Connection from client " + str(client))
         if not client in status:
             status[client] = { }
             status[client]['volts'] = 0
@@ -50,6 +53,8 @@ class DummyDevice(socketserver.StreamRequestHandler):
             if (len(line) <= 0):
                break
             reply = None
+            if verbose:
+                print("> " + line)
             if (line == '*IDN?'):
                 reply = 'US-PAS Linac, Yoyodyne Inc. -- An ACME Industries subsidiary, S/N:1314'
             elif (line == 'BEAM?'):
@@ -91,6 +96,11 @@ class DummyDevice(socketserver.StreamRequestHandler):
                             status[client]['beamOn'] = True
                         elif args[1] == 'OFF':
                             status[client]['beamOn'] = False
+                        if verbose:
+                            if status[client]['beamOn']:
+                                print("BEAM ON")
+                            else:
+                                print("BEAM OF")
                     else:
                         val = float(args[1])
                         if (args[0] == 'ON'):
@@ -102,8 +112,12 @@ class DummyDevice(socketserver.StreamRequestHandler):
                             status[client]['volts'] = clip(val)
                         elif (args[0] == 'HCORR'):
                             status[client]['hAmps'] = clip(val)
+                            if verbose:
+                                print("HCORR %.3f" % status[client]['hAmps'])
                         elif (args[0] == 'VCORR'):
                             status[client]['vAmps'] = clip(val)
+                            if verbose:
+                                print("VCORR %.3f" % status[client]['vAmps'])
                 except:
                     pass
             if (reply):
