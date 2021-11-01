@@ -307,7 +307,7 @@ ss ss1 {
       %% strcpy( seqg_var->stateName, "reheating" );
       pvPut( stateName, SYNC );
       count = 0;
-      curState = HOLDING;
+      curState = REHEATING;
       heaterCtl = 1;
       pvPut( heaterCtl, SYNC );
       impellerCtl = 1;
