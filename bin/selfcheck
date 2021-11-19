@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Some self tests
+
+# Different hosts (VMware, VisualBox, ..) might change the IP
+# address, which would require adjusting some setup files
+if [ `ifconfig  | fgrep "broadcast 10.0.2.255" | wc -l` -eq 1 ]
+then
+    echo "IP Address OK"
+else
+    echo "Expected IP 10.0.2.15, got"
+    ifconfig  | fgrep 'inet '
+fi
+
+
+# Example for another test
+if which softIocPVA >/dev/null
+then
+    echo "Soft IOC command OK"
+else
+    echo "Cannot locate soft IOC command"
+fi
