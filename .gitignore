@@ -5,6 +5,8 @@ examples/bin
 examples/db
 examples/dbd
 examples/lib
+examples/python/
+examples/include/
 *.swp
 opi/Display Builder
 .vscode

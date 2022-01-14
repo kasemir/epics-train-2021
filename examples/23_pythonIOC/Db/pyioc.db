@@ -1,0 +1,7 @@
+record(ai, "$(user):random")
+{
+	field(DESC, "Random value in range [0,HOPR]")
+        field(HOPR, "10")
+	field(DTYP, "pydev")
+	field(INP,  "@demo.getRandom(HOPR)")
+}

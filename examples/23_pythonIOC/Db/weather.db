@@ -1,0 +1,87 @@
+record(stringin, "$(user):weather:AuthKey")
+{
+    field(VAL,  "daf4cf281052dc65e4728f7de616032c")
+}
+record(stringout, "$(user):weather:city")
+{
+    field(VAL,  "Paris")
+    field(OUT,  "$(user):weather:refresh.A PP")
+}
+record(mbbi, "$(user):weather:units")
+{
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(TWVL, "2")
+    field(ZRST, "imperial")
+    field(ONST, "metric")
+    field(TWST, "standard")
+    field(PINI, "YES")
+}
+record(pycalc, "$(user):weather:refresh")
+{
+#    field(INPA, "$(user):weather:city")
+    field(INPB, "$(user):weather:units CP")
+    field(INPC, "$(user):weather:AuthKey CP")
+    field(FTA,  "STRING")
+    field(FTB,  "STRING")
+    field(FTC,  "STRING")
+    field(CALC, "weather=getWeather('A','B','C',TPRO==1)")
+    field(FLNK, "$(user):weather:temperature")
+}
+record(pycalc, "$(user):weather:units:temperature")
+{
+    field(INPA, "$(user):weather:units CP")
+    field(FTA,  "LONG")
+    field(CALC, "['Fahrenheit','Celsius','Kelvin'][A]")
+    field(OUT,  "$(user):weather:temperature.EGU PP")
+    field(FTVL, "STRING")
+}
+record(ai, "$(user):weather:temperature")
+{
+    field(DTYP, "pydev")
+    field(INP,  "@weather['temperature']")
+    field(PREC, "1")
+    field(EGU,  "F")
+    field(FLNK, "$(user):weather:icon")
+}
+record(stringin, "$(user):weather:icon")
+{
+    field(DTYP, "pydev")
+    field(INP,  "@weather['icon']")
+    field(FLNK, "$(user):weather:pressure")
+}
+record(longin, "$(user):weather:pressure")
+{
+    field(DTYP, "pydev")
+    field(INP,  "@weather['pressure']")
+    field(EGU,  "hPa")
+    field(FLNK, "$(user):weather:humidity")
+}
+record(longin, "$(user):weather:humidity")
+{
+    field(DTYP, "pydev")
+    field(INP,  "@weather['humidity']")
+    field(EGU,  "%")
+    field(FLNK, "$(user):weather:wind")
+}
+record(pycalc, "$(user):weather:units:wind")
+{
+    field(INPA, "$(user):weather:units CP")
+    field(FTA,  "LONG")
+    field(CALC, "['mph','m/s','m/s'][A]")
+    field(OUT,  "$(user):weather:wind.EGU PP")
+    field(FTVL, "STRING")
+}
+record(ai, "$(user):weather:wind")
+{
+    field(DTYP, "pydev")
+    field(INP,  "@weather['wind']")
+    field(PREC, "1")
+    field(EGU,  "mph")
+    field(FLNK, "$(user):weather:clouds")
+}
+record(stringin, "$(user):weather:clouds")
+{
+    field(DTYP, "pydev")
+    field(INP,  "@weather['clouds']")
+}
