@@ -193,6 +193,7 @@ wget https://github.com/klemenv/PyDevice/archive/refs/tags/R1.1.1.tar.gz
 cd /ics/tools
 tar zxf /tmp/R1.1.1.tar.gz
 cd PyDevice-R1.1.1
+sed -i 's/^# PYTHON_CONFIG/PYTHON_CONFIG/' /ics/tools/PyDevice-R1.1.1/configure/CONFIG_SITE
 ln -snfr /ics/tools/RELEASE.local configure/
 make
 echo "PYDEVICE=/ics/tools/PyDevice-R1.1.1" >>/ics/tools/RELEASE.local 
