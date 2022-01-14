@@ -195,6 +195,7 @@ tar zxf /tmp/R1.1.1.tar.gz
 cd PyDevice-R1.1.1
 ln -snfr /ics/tools/RELEASE.local configure/
 make
+echo "PYDEVICE=/ics/tools/PyDevice-R1.1.1" >>/ics/tools/RELEASE.local 
 ```
 
 PVXS, P4P/Gateway
