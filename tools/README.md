@@ -184,6 +184,17 @@ python setup.py build
 sudo EPICS_BASE=$EPICS_BASE EPICS_HOST_ARCH=$EPICS_HOST_ARCH python setup.py install
 cd ..
 rm -rf pcaspy-0.7.3
+
+
+# PyDevice
+sudo apt install python-dev
+cd /tmp
+wget https://github.com/klemenv/PyDevice/archive/refs/tags/R1.1.1.tar.gz
+cd /ics/tools
+tar zxf /tmp/R1.1.1.tar.gz
+cd PyDevice-R1.1.1
+ln -snfr /ics/tools/RELEASE.local configure/
+make
 ```
 
 PVXS, P4P/Gateway
@@ -347,6 +358,13 @@ sh create_alarm_topics.sh Accelerator
 wget https://controlssoftware.sns.ornl.gov/css_phoebus/nightly/alarm-server.zip
 unzip alarm-server.zip
 rm alarm-server.zip
+```
+
+Misc
+---
+```
+## Support for the example IOCs
+sudo pip install python-weather
 ```
 
 Cleanup for VM Snapshot
