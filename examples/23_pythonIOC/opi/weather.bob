@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <macros>
+    <P>training:weather</P>
+  </macros>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Weather demo</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>City:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>$(P):city</pv_name>
+    <x>110</x>
+    <y>50</y>
+    <width>160</width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Humidity:</text>
+    <y>220</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Clouds:</text>
+    <y>280</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_5</name>
+    <text>Wind:</text>
+    <y>250</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(P):temperature</pv_name>
+    <x>110</x>
+    <y>160</y>
+    <width>150</width>
+    <background_color>
+      <color name="Transparent" red="255" green="255" blue="255" alpha="0">
+      </color>
+    </background_color>
+    <precision>1</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(P):humidity</pv_name>
+    <x>110</x>
+    <y>220</y>
+    <width>150</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_2</name>
+    <pv_name>$(P):clouds</pv_name>
+    <x>110</x>
+    <y>280</y>
+    <width>150</width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_3</name>
+    <pv_name>$(P):wind</pv_name>
+    <x>110</x>
+    <y>250</y>
+    <width>150</width>
+    <precision>1</precision>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_6</name>
+    <text>Pressure:</text>
+    <y>310</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_4</name>
+    <pv_name>$(P):pressure</pv_name>
+    <x>110</x>
+    <y>310</y>
+    <width>150</width>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Settings</name>
+    <x>380</x>
+    <y>80</y>
+    <width>410</width>
+    <rules>
+      <rule name="Visible" prop_id="visible" out_exp="true">
+        <exp bool_exp="true">
+          <expression>pv0==1</expression>
+        </exp>
+        <pv_name>loc://show_settings(0)</pv_name>
+      </rule>
+    </rules>
+    <widget type="label" version="2.0.0">
+      <name>Label_7</name>
+      <text>OpenWeather Key:</text>
+      <x>2</x>
+      <y>2</y>
+      <width>130</width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>Label_8</name>
+      <text>Units:</text>
+      <x>2</x>
+      <y>32</y>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>Text Entry_1</name>
+      <pv_name>$(P):AuthKey</pv_name>
+      <x>132</x>
+      <y>2</y>
+      <width>230</width>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Combo Box</name>
+      <pv_name>$(P):units</pv_name>
+      <x>132</x>
+      <y>32</y>
+      <width>140</width>
+      <height>20</height>
+    </widget>
+  </widget>
+  <widget type="checkbox" version="2.0.0">
+    <name>Check Box</name>
+    <pv_name>loc://show_settings(0)</pv_name>
+    <label>Show Settings</label>
+    <x>390</x>
+    <y>50</y>
+    <width>160</width>
+  </widget>
+  <widget type="led" version="2.0.0">
+    <name>LED</name>
+    <pv_name>$(P):refresh.SEVR</pv_name>
+    <x>280</x>
+    <y>50</y>
+    <off_color>
+      <color name="OK" red="0" green="255" blue="0">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MAJOR" red="255" green="0" blue="0">
+      </color>
+    </on_color>
+  </widget>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>http://openweathermap.org/img/wn/10d@2x.png</file>
+    <x>110</x>
+    <y>80</y>
+    <rules>
+      <rule name="Icon" prop_id="file" out_exp="true">
+        <exp bool_exp="true">
+          <expression>'http://openweathermap.org/img/wn/'+pvStr0+'@2x.png'</expression>
+        </exp>
+        <pv_name>$(P):icon</pv_name>
+      </rule>
+    </rules>
+  </widget>
+</display>

@@ -5,7 +5,6 @@ record(stringin, "$(user):weather:AuthKey")
 record(stringout, "$(user):weather:city")
 {
     field(VAL,  "Paris")
-    field(OUT,  "$(user):weather:refresh.A PP")
 }
 record(mbbi, "$(user):weather:units")
 {
@@ -19,7 +18,7 @@ record(mbbi, "$(user):weather:units")
 }
 record(pycalc, "$(user):weather:refresh")
 {
-#    field(INPA, "$(user):weather:city")
+    field(INPA, "$(user):weather:city CP")
     field(INPB, "$(user):weather:units CP")
     field(INPC, "$(user):weather:AuthKey CP")
     field(FTA,  "STRING")
