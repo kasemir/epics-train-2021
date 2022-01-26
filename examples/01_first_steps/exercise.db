@@ -1,0 +1,102 @@
+# Run as
+# softIoc -m S=demo -d exercise.db
+
+record(ao, "$(S):limit")
+{
+  field(DRVH, "100")
+  field(DOL, "10")
+  field(OMSL, "closed_loop")
+  field(PINI, "YES")
+}
+
+record(ao, "$(S):reset")
+{
+  field(DOL, "10")
+  field(DRVL, "9.9999999")
+  field(DRVH, "10.000001")
+  field(OUT, "$(S):limit PP")
+#  field(PINI, "YES")
+  field(FLNK, "$(S):limit")
+}
+
+record(ao, "$(S):step")
+{
+  field(DRVL, "0.1")
+  field(DRVH, "5")
+  field(DOL, "1")
+  field(PINI, "YES")
+  field(PREC,  "2")
+}
+
+record(bo, "$(S):DoubleRampSize")
+{
+  field(ZNAM, "Normal")
+  field(ONAM, "Doubled")
+  field(HIGH, "5")
+  field(PINI, "YES")
+}
+
+record(calc, "$(S):ramp")
+{
+  field(SCAN, "1 second")
+  field(INPA,  "$(S):ramp")
+  field(INPB,  "$(S):limit")
+  field(INPC,  "$(S):step")
+  field(INPD,  "$(S):DoubleRampSize")
+# field(CALC,  "A<B ? A+C : 0")
+# field(CALC,  "A<B ? A+C*(D+1) : 0")
+  field(CALC,  "A<B ? A+(D?2*C:C) : 0")
+  field(PREC,  "2")
+  field(EGU,   "a.u.")
+  
+# LOLO, LOW, HIGH, HIHI
+  field(HIGH,  "8")
+  
+# LLSV, LSV, HSV, HHSV
+  field(HSV,   "MINOR")
+  
+  field(ADEL,  "2")
+}
+
+
+# Attaching a display widget to "demo:ramp.SCAN"
+# lists all the SCAN field options:
+# [0] Passive
+# [1] Event
+# [2] I/O Intr
+# [3] 10 second
+# [4] 5 second
+# [5] 2 second
+# [6] 1 second
+# [7] .5 second
+# [8] .2 second
+# [9] .1 second
+#
+record(mbbo, "$(S):rate")
+{
+# We want to present just a few of them.
+  field(ZRST, "1 Hz")
+  field(ONST, "2 Hz")
+  field(TWST, "10 Hz")
+
+# camonitor    demo:rate      ->  "1 Hz", "2 Hz", "10 Hz"
+# camonitor -n demo:rate      ->    0   ,    1  ,   2
+
+  field(ZRVL, "6")
+  field(ONVL, "7")
+  field(TWVL, "9")
+  
+# camonitor    demo:rate.RVAL ->    6   ,    7  ,   9  
+  
+  field(OUT,  "$(S):ramp.SCAN")
+  field(DTYP, "Raw Soft Channel")
+  
+  field(DOL,  "0")
+  field(PINI, "YES")
+
+# Start out with VAL=0, "1 Hz", RVAL 6
+}
+
+
+
+

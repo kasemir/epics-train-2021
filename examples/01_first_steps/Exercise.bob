@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>Display</name>
+  <widget type="label" version="2.0.0">
+    <name>Label</name>
+    <class>TITLE</class>
+    <text>Ramp Example</text>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>550</width>
+    <height>31</height>
+    <font use_class="true">
+      <font name="Header 1" family="Liberation Sans" style="BOLD" size="22.0">
+      </font>
+    </font>
+    <foreground_color use_class="true">
+      <color name="Text" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <transparent use_class="true">true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>Ramp Value:</text>
+    <y>50</y>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>demo:ramp</pv_name>
+    <x>100</x>
+    <y>50</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_2</name>
+    <text>Limit:</text>
+    <y>86</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry</name>
+    <pv_name>demo:limit</pv_name>
+    <x>99</x>
+    <y>84</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_3</name>
+    <text>Step:</text>
+    <y>124</y>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_1</name>
+    <pv_name>demo:step</pv_name>
+    <x>99</x>
+    <y>122</y>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_4</name>
+    <text>Rate:</text>
+    <y>157</y>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box</name>
+    <pv_name>demo:ramp.SCAN</pv_name>
+    <x>100</x>
+    <y>227</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>1 second</item>
+      <item>.1 second</item>
+      <item>5 second</item>
+    </items>
+    <items_from_pv>false</items_from_pv>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_1</name>
+    <pv_name>demo:ramp.SCAN</pv_name>
+    <x>100</x>
+    <y>157</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <items>
+      <item>1 second</item>
+    </items>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>Text Entry_2</name>
+    <pv_name>demo:ramp.SCAN</pv_name>
+    <x>100</x>
+    <y>197</y>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>demo:reset.PROC</pv_name>
+        <value>1</value>
+        <description>Reset</description>
+      </action>
+    </actions>
+    <x>221</x>
+    <y>84</y>
+    <width>86</width>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>Action Button_1</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>demo:DoubleRampSize</pv_name>
+        <value>1</value>
+        <description>Double</description>
+      </action>
+    </actions>
+    <x>339</x>
+    <y>122</y>
+    <height>20</height>
+    <tooltip>$(actions)</tooltip>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>Boolean Button</name>
+    <pv_name>demo:DoubleRampSize</pv_name>
+    <x>221</x>
+    <y>122</y>
+    <width>86</width>
+    <height>20</height>
+    <off_color>
+      <color name="Button_Background" red="210" green="210" blue="210">
+      </color>
+    </off_color>
+    <on_color>
+      <color name="MINOR" red="255" green="128" blue="0">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <labels_from_pv>true</labels_from_pv>
+  </widget>
+  <widget type="radio" version="2.0.0">
+    <name>Radio Button</name>
+    <pv_name>demo:DoubleRampSize</pv_name>
+    <x>457</x>
+    <y>122</y>
+    <width>111</width>
+    <height>55</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="choice" version="2.0.0">
+    <name>Choice Button</name>
+    <pv_name>demo:DoubleRampSize</pv_name>
+    <x>339</x>
+    <y>177</y>
+    <width>173</width>
+    <height>20</height>
+    <items>
+      <item>Item 1</item>
+      <item>Item 2</item>
+    </items>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>Combo Box_2</name>
+    <pv_name>demo:rate</pv_name>
+    <x>100</x>
+    <y>281</y>
+    <items>
+      <item>1 second</item>
+    </items>
+  </widget>
+</display>
