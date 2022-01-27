@@ -1,0 +1,17 @@
+# "template", same as plain database that uses macros.
+#
+# Load with "softIoc -m N=1 -d abc_motor.template -m N=2 -d abc_motor.template
+# or in st.cmd via
+#
+#   dbLoadRecords("../../db/abc_motor.template", "N=1")
+#   dbLoadRecords("../../db/abc_motor.template", "N=2")
+
+record(ao, "Motor$(N):Setpoint")
+{
+}
+
+record(ai, "Motor$(N):Readback")
+{
+}
+
+

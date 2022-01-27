@@ -1,0 +1,37 @@
+# Substitution file
+#
+# When Makefile line
+#
+#   DB += abc_motors.db
+#
+# notices that there is no such *.db file,
+# but there is an abc_motors.substitutions file,
+# it will expand it.
+#
+# Reasons to do so:
+# 1) In the past, loading one "expanded" file was much faster than
+#    loading N separate files
+# 2) Personal preference, can "grep" for complete PV name in file,
+#    all macros resolved
+#
+# Nowadays IOC st.cmd file can also use
+#
+#  dbLoadTemplate "db/abc_motors.substitutions"
+#
+# and perform the expansion in the IOC
+
+file "abc_motor.template"
+{
+  { N = "1", X="U", P="Q" }
+  { N = "2", X="U", P="Q" }
+}
+
+file "abc_motor.template"
+{
+  pattern { N,   X,   U }
+          { "3", "U", "Q" }
+          { "4", "U", "Q" }
+          { "5", "U", "Q" }
+}
+
+
