@@ -1,6 +1,9 @@
 # "template", same as plain database that uses macros.
 #
-# Load with "softIoc -m N=1 -d abc_motor.template -m N=2 -d abc_motor.template
+# Load with
+#
+#   softIoc -m N=1 -d abc_motor.template -m N=2 -d abc_motor.template
+#
 # or in st.cmd via
 #
 #   dbLoadRecords("../../db/abc_motor.template", "N=1")
@@ -8,6 +11,8 @@
 
 record(ao, "Motor$(N):Setpoint")
 {
+   field(DTYP, "stream")
+#   field(OUT, "@motor.proto getSetpoint $(LINK)")
 }
 
 record(ai, "Motor$(N):Readback")

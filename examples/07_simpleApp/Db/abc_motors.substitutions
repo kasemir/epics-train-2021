@@ -28,7 +28,7 @@ file "abc_motor.template"
 
 file "abc_motor.template"
 {
-  pattern { N,   X,   U }
+  pattern { N,   X,   P }
           { "3", "U", "Q" }
           { "4", "U", "Q" }
           { "5", "U", "Q" }
