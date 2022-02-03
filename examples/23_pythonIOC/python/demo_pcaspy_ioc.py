@@ -11,7 +11,7 @@ pvdb = {
 
 class DemoDriver(Driver):
     def __init__(self):
-        super(demoDriver, self).__init__()
+        super(DemoDriver, self).__init__()
 
     def read(self, reason):
         if reason == 'random':
