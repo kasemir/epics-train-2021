@@ -217,6 +217,8 @@ git clone https://github.com/mdavidsaver/p4p.git
 cd p4p
 python3 -m pip install -r requirements-latest.txt
 make
+# In the generated pvagw, may have to change '#!/usr/bin/python'
+# to use .../python3
 ```
 
 V4 Demos
