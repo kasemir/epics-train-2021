@@ -96,6 +96,7 @@
         </font>
       </scale_font>
     </y_axis>
+    <limits_from_pv>true</limits_from_pv>
     <data_width>10</data_width>
     <data_height>10</data_height>
     <unsigned>true</unsigned>
