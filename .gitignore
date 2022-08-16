@@ -10,3 +10,4 @@ examples/include/
 *.swp
 opi/Display Builder
 .vscode
+examples/JavaPVADemo

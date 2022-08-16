@@ -301,6 +301,15 @@ mv dbwr.war ../apache-tomcat-9.0.52/webapps/
 ant clean
 ```
 
+Maven
+
+```
+wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip
+unzip apache-maven-3.8.6-bin.zip 
+rm apache-maven-3.8.6-bin.zip 
+ln -s apache-maven-3.8.6 apache-maven
+ln -s /ics/tools/apache-maven/bin/mvn /ics/bin
+```
 
 MySQL
 ```
