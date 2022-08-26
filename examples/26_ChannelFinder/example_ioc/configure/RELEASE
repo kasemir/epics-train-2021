@@ -1,0 +1,4 @@
+# RELEASE - Location of external support modules
+
+EPICS_BASE=/ics/tools/base-7.0.6
+RECSYNC=/ics/tools/recsync/client/

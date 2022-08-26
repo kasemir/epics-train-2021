@@ -1,0 +1,2 @@
+cd /ics/tools/elasticsearch
+bin/elasticsearch

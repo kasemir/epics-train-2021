@@ -1,0 +1,9 @@
+cd /ics/tools/ChannelFinderService
+
+# Create 1 * 1500 demo channels
+java -jar target/ChannelFinder-4.7.1-SNAPSHOT.jar --demo-data=1
+
+# Delete the demo channels
+# java -jar target/ChannelFinder-4.7.1-SNAPSHOT.jar --cleanup=1
+
+

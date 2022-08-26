@@ -1,0 +1,3 @@
+cd /ics/tools/recsync/server
+export PYTHONPATH=/ics/tools/recsync/server:/ics/tools/recsync/server/build/lib
+twistd -r poll -n recceiver -f cf.conf

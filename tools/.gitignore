@@ -25,3 +25,7 @@ p4p
 pvxs
 EPICSV4Sandbox
 PyDevice-R1.1.1
+ChannelFinderService/
+elasticsearch*
+pyCFClient/
+recsync/

@@ -1,0 +1,7 @@
+record(calc, "cf_demo:ramp")
+{
+   field(DESC, "Example record")
+   field(CALC, "A+1")
+   field(INPA, "cf_demo:ramp")
+   field(SCAN, "1 second")
+}

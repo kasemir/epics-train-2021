@@ -17,6 +17,7 @@ Misc. Debian additions:
     sudo apt install make
     sudo apt install g++
     sudo apt install python3-is-python
+    sudo apt install curl
 
 Set background
 
@@ -237,6 +238,122 @@ cd /ics/tools/EPICSV4Sandbox/ntndarrayServer/src
 #        Remove ntndarrayServerMain.cpp #include <pv/traceRecord.h>
 make
 ```
+
+Channel Finder
+--------------
+
+ElasticSearch
+
+```
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.4.0-linux-x86_64.tar.gz
+tar vzxf elasticsearch-8.4.0-linux-x86_64.tar.gz
+rm elasticsearch-8.4.0-linux-x86_64.tar.gz
+ln -s elasticsearch-8.4.0 elasticsearch
+
+cd elasticsearch
+cat <<END >config/elasticsearch.yml
+# Optionally: allow access from not only 'localhost',
+network.host: 0.0.0.0
+
+# Prevent the node from trying to form a cluster
+discovery.type: single-node
+
+# Either configure security, or disable it to avoid warnings:
+xpack.security.enabled: false
+END
+
+cat <<END >config/jvm.options.d/jvm.options
+-Xms1g
+-Xmx1g
+END
+```
+
+ChannelFinder
+
+```
+cd /ics/tools
+git clone https://github.com/ChannelFinder/ChannelFinderService.git
+cd ChannelFinderService
+
+# Edit to set `embedded_ldap.enabled = true`
+vi src/main/resources/application.properties
+
+mvn clean verify
+```
+
+Python interface to CF
+
+```
+cd /ics/tools
+git clone https://github.com/ChannelFinder/pyCFClient.git
+cd pyCFClient/
+python3 setup.py build
+sudo python3 setup.py install
+```
+
+Then try this in python:
+
+```
+from channelfinder import ChannelFinderClient
+cf = ChannelFinderClient()
+for c in cf.find(name='*TMP*'):
+    print(c['name'])
+```
+
+RecSync
+
+```
+sudo pip3 install twisted
+
+cd /ics/tools
+git clone https://github.com/ChannelFinder/recsync.git
+cd recsync/server
+python3 setup.py build
+
+
+# 'cf' plugin reads this file (or /etc/channelfinderapi.conf):
+cat >channelfinderapi.conf <<END
+[DEFAULT]
+BaseURL=http://localhost:8080/ChannelFinder
+username=admin
+password=1234
+END
+```
+
+In `cf.conf`:
+```
+[recceiver]
+
+loglevel = DEBUG
+
+# Un-comment for local testing w/ firewall
+addrlist = 127.255.255.255:5049
+
+[cf]
+environment_vars=ENGINEER:Engineer,EPICS_BASE:EpicsVersion,PWD:WorkingDirectory
+recordType = on
+recordDesc = on
+```
+
+Run server:
+```
+export PYTHONPATH=/ics/tools/recsync/server:/ics/tools/recsync/server/build/lib
+twistd -r poll -n recceiver -f cf.conf
+```
+
+Run demo IOC:
+```
+cd ../client
+make
+cd iocBoot/iocdemo
+
+# May need to adjust #!/... line
+./st.cmd
+```
+
+After about 15 seconds, server sends 'announce' and IOC replies.
+When exiting IOC, server notices this.   
+
 
 CS-Studio
 ---------

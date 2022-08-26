@@ -1,0 +1,4 @@
+cd /ics/examples/26_ChannelFinder/example_ioc
+make
+cd iocBoot/iocexample/
+./st.cmd
